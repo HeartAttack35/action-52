@@ -1,0 +1,152 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Registrar Jupiter Scope en MinigameRegistry": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000555435
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000565043
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000602141
+      }
+    ],
+    "2.1 Crear `laser.tscn` y `laser.gd` en `scenes/minigames/Jupiter Scope/`": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000555819
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000612227
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000691401
+      }
+    ],
+    "3.1 Crear `player.tscn` y `player.gd` en `scenes/minigames/Jupiter Scope/`": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000555997
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000710797
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000801834
+      }
+    ],
+    "4.1 Crear `meteor.tscn` y `meteor.gd` en `scenes/minigames/Jupiter Scope/`": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000556091
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000711619
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000802595
+      }
+    ],
+    "5. Checkpoint — Verificar que las escenas individuales compilan sin errores en Godot.": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000556188
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000808593
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000821098
+      }
+    ],
+    "6.1 Sobreescribir `jupiter_scope.tscn` y `jupiter_scope.gd`": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000556293
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000826328
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000919513
+      }
+    ],
+    "7. Checkpoint final — Verificar integración completa": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000556365
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000924085
+      },
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000940959
+      }
+    ],
+    "2. Implementar la escena Láser": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000691550
+      }
+    ],
+    "3. Implementar la escena Jugador": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000801944
+      }
+    ],
+    "4. Implementar la escena Meteorito": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000802683
+      }
+    ],
+    "6. Implementar la escena principal JupiterScope": [
+      {
+        "executionId": "0c3ed72a-9198-4d59-a27c-156d1871170a",
+        "chatSessionId": "sess_e2e5f2ae-a59a-4350-b263-be181833c5d5",
+        "timestamp": 1787000919606
+      }
+    ]
+  }
+}

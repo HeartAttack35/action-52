@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bjwsj7wbrqnvy"]
+
+[ext_resource type="Script" uid="uid://btkhbkqxahscf" path="res://scenes/minigames/Jupiter Scope/jupiter_scope.gd" id="1_cw4xh"]
+[ext_resource type="PackedScene" uid="uid://dp4r8m2wnb6xt" path="res://scenes/minigames/Jupiter Scope/player.tscn" id="2_f6m3n"]
+
+[node name="JupiterScope" type="Node2D" unique_id=1886228263]
+script = ExtResource("1_cw4xh")
+
+[node name="Player" parent="." unique_id=1538326747 instance=ExtResource("2_f6m3n")]
+
+[node name="MeteorSpawner" type="Timer" parent="." unique_id=1680314991]
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=84776368]
+
+[node name="LabelScore" type="Label" parent="HUD" unique_id=986733859]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 200.0
+offset_bottom = 40.0
+text = "Puntos: 0"
+
+[node name="LabelLives" type="Label" parent="HUD" unique_id=87786642]
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 80.0
+text = "Vidas: 3"
+
+[connection signal="timeout" from="MeteorSpawner" to="." method="_on_meteor_spawner_timeout"]

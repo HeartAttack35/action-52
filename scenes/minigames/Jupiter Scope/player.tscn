@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dp4r8m2wnb6xt"]
+
+[ext_resource type="Script" uid="uid://cj5n7q1gy3m8k" path="res://scenes/minigames/Jupiter Scope/player.gd" id="1_f3h9p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7w2s"]
+size = Vector2(30, 20)
+
+[node name="Player" type="CharacterBody2D" groups=["jugador"]]
+script = ExtResource("1_f3h9p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v7w2s")
+
+[node name="ShootPoint" type="Marker2D" parent="."]
+position = Vector2(0, -30)
