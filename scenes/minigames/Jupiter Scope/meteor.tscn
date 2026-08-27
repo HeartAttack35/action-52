@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://dm5r8t2nwq6bx"]
 
-[ext_resource type="Script" uid="uid://bh4k9x7vc3n1p" path="res://scenes/minigames/Jupiter Scope/meteor.gd" id="1_f7w2j"]
+[ext_resource type="Script" uid="uid://df2em3ltwegrl" path="res://scenes/minigames/Jupiter Scope/meteor.gd" id="1_f7w2j"]
+[ext_resource type="Texture2D" uid="uid://cvb3d46k5fybw" path="res://assets/sprites/kindpng_1350584.png" id="2_3yt5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3p8k"]
-size = Vector2(20, 20)
 
-[node name="Meteor" type="Area2D" groups=["meteoros"]]
+[node name="Meteor" type="Area2D" unique_id=225409548 groups=["meteoros"]]
 script = ExtResource("1_f7w2j")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1968633828]
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("2_3yt5n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073630211]
 shape = SubResource("RectangleShape2D_m3p8k")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

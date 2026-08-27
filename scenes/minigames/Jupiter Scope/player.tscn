@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://dp4r8m2wnb6xt"]
 
-[ext_resource type="Script" uid="uid://cj5n7q1gy3m8k" path="res://scenes/minigames/Jupiter Scope/player.gd" id="1_f3h9p"]
+[ext_resource type="Script" uid="uid://c23btabbnddnr" path="res://scenes/minigames/Jupiter Scope/player.gd" id="1_f3h9p"]
+[ext_resource type="Texture2D" uid="uid://2hyclk0hipcl" path="res://assets/sprites/NicePng_spaceship-png_138961.png" id="2_2ebgn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7w2s"]
 size = Vector2(30, 20)
 
-[node name="Player" type="CharacterBody2D" groups=["jugador"]]
+[node name="Player" type="CharacterBody2D" unique_id=366351481 groups=["jugador"]]
 script = ExtResource("1_f3h9p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=41679039]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_2ebgn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1154935699]
 shape = SubResource("RectangleShape2D_v7w2s")
 
-[node name="ShootPoint" type="Marker2D" parent="."]
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=2125948323]
 position = Vector2(0, -30)
