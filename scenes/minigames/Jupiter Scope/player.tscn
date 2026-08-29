@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://2hyclk0hipcl" path="res://assets/sprites/NicePng_spaceship-png_138961.png" id="2_2ebgn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7w2s"]
-size = Vector2(30, 20)
+size = Vector2(50, 40)
 
 [node name="Player" type="CharacterBody2D" unique_id=366351481 groups=["jugador"]]
 script = ExtResource("1_f3h9p")

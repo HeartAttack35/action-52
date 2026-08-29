@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c3hq7p2mvx8fy"]
+
+[ext_resource type="Script" uid="uid://bns4w6dkrtq1e" path="res://scenes/minigames/Shooting Gallery/shooting_gallery.gd" id="1_a7x3m"]
+[ext_resource type="PackedScene" uid="uid://bikxrd70ma8u0" path="res://scenes/minigames/Shooting Gallery/player.tscn" id="2_b9k4p"]
+
+[node name="ShootingGallery" type="Node2D"]
+script = ExtResource("1_a7x3m")
+
+[node name="Player" parent="." instance=ExtResource("2_b9k4p")]
+
+[node name="TargetSpawner" type="Timer" parent="."]
+wait_time = 1.0
+autostart = true
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SpawnPoint1" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(48, 50)
+
+[node name="SpawnPoint2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(144, 50)
+
+[node name="SpawnPoint3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(240, 50)
+
+[node name="SpawnPoint4" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(336, 50)
+
+[node name="SpawnPoint5" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(432, 50)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="LabelScore" type="Label" parent="HUD"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 200.0
+offset_bottom = 40.0
+text = "Puntos: 0"
+
+[node name="LabelLives" type="Label" parent="HUD"]
+offset_left = 280.0
+offset_top = 10.0
+offset_right = 470.0
+offset_bottom = 40.0
+text = "Vidas: 3"
+
+[connection signal="timeout" from="TargetSpawner" to="." method="_on_target_spawner_timeout"]

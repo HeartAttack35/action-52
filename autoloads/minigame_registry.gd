@@ -20,6 +20,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Jupiter Scope/jupiter_scope.tscn",
 		"tier": 1,
 	},
+	{
+		"id": "shooting_gallery",
+		"name": "Shooting Gallery",
+		"scene": "res://scenes/minigames/Shooting Gallery/shooting_gallery.tscn",
+		"tier": 1,
+	},
 ]
 
 

@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cvb3d46k5fybw" path="res://assets/sprites/kindpng_1350584.png" id="2_3yt5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3p8k"]
+size = Vector2(100, 100)
 
 [node name="Meteor" type="Area2D" unique_id=225409548 groups=["meteoros"]]
 script = ExtResource("1_f7w2j")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1968633828]
-scale = Vector2(0.015, 0.015)
+scale = Vector2(0.055, 0.055)
 texture = ExtResource("2_3yt5n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073630211]

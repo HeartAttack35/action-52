@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bikxrd70ma8u0"]
+
+[ext_resource type="Script" uid="uid://d0f55xaki0a3m" path="res://scenes/minigames/Shooting Gallery/player.gd" id="1_fatqr"]
+[ext_resource type="Texture2D" uid="uid://b3t0xxxtfvnie" path="res://assets/sprites/images.png" id="2_cpaoj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2jqb"]
+radius = 16.0
+height = 40.0
+
+[node name="Player" type="CharacterBody2D" unique_id=854243235]
+script = ExtResource("1_fatqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1094163152]
+shape = SubResource("CapsuleShape2D_n2jqb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489054269]
+texture = ExtResource("2_cpaoj")
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=1965399801]
+position = Vector2(0, -20)

@@ -1,0 +1,409 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Crear `bullet.gd` en `res://scenes/minigames/Shooting Gallery/`": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961531437
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961546746
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961638487
+      }
+    ],
+    "1.2 Crear `bullet.tscn` con árbol de nodos correcto": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961531902
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961654878
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961824589
+      }
+    ],
+    "1.3 Escribir test de propiedad para el movimiento uniforme de la Bala": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961532204
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787962167222
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966028966
+      }
+    ],
+    "1.4 Escribir test unitario de grupo para la Bala": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961532327
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787962171620
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966033307
+      }
+    ],
+    "2.1 Crear `target.gd` en `res://scenes/minigames/Shooting Gallery/`": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961532538
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961550658
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961644004
+      }
+    ],
+    "2.2 Crear `target.tscn` con árbol de nodos correcto": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961532707
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961659619
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961829368
+      }
+    ],
+    "2.3 Escribir test de propiedad para el rango de LifeTimer del Blanco": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961532816
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787962175976
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966037994
+      }
+    ],
+    "2.4 Escribir test de propiedad para el guard contra procesamiento doble": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961532924
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787962180788
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966042740
+      }
+    ],
+    "2.5 Escribir test de propiedad de instanciación de Bala en posición indicada": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961533054
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787962185383
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966047028
+      }
+    ],
+    "2.6 Escribir test de propiedad de coexistencia de múltiples Balas": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961533190
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787962190767
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966051086
+      }
+    ],
+    "2.7 Escribir test unitario de grupo para el Blanco": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961533389
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787962195386
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966055398
+      }
+    ],
+    "3.1 Crear `player.gd` en `res://scenes/minigames/Shooting Gallery/`": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961533504
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961555679
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961648530
+      }
+    ],
+    "3.2 Crear `player.tscn` con árbol de nodos correcto": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961533622
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961665369
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961835470
+      }
+    ],
+    "3.3 Escribir test de propiedad para el confinamiento horizontal del Pistolero": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961533737
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787962203342
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966060258
+      }
+    ],
+    "4. Checkpoint — Verificar scripts individuales": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961533843
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966077345
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966144201
+      }
+    ],
+    "5.1 Crear `shooting_gallery.gd` en `res://scenes/minigames/Shooting Gallery/`": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961533944
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966149309
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966234799
+      }
+    ],
+    "5.2 Crear `shooting_gallery.tscn` con árbol de nodos completo": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961534063
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966239890
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966595970
+      }
+    ],
+    "5.3 Escribir test de propiedad para el spawn de Blancos en posiciones válidas": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961534234
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966602951
+      }
+    ],
+    "5.4 Escribir test de propiedad para el formato del HUD": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961534409
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966610144
+      }
+    ],
+    "5.5 Escribir test de propiedad para la condición de fin de partida": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961534517
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966618208
+      }
+    ],
+    "5.6 Escribir tests unitarios de inicialización y configuración de escena": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961534644
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966623495
+      }
+    ],
+    "6.1 Actualizar `autoloads/minigame_registry.gd`": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961534761
+      },
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966629188
+      }
+    ],
+    "6.2 Escribir test unitario de integración con MinigameRegistry": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961534868
+      },
+      {
+        "executionId": "166454a2-e29e-4e5e-aa5a-f1aa5c845a79",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787968862215
+      },
+      {
+        "executionId": "166454a2-e29e-4e5e-aa5a-f1aa5c845a79",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787969255442
+      }
+    ],
+    "7. Checkpoint final — Verificar integración completa": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787961534983
+      },
+      {
+        "executionId": "166454a2-e29e-4e5e-aa5a-f1aa5c845a79",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787969259388
+      },
+      {
+        "executionId": "166454a2-e29e-4e5e-aa5a-f1aa5c845a79",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787969433483
+      }
+    ],
+    "1. Crear el script y la escena de la Bala": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966033429
+      }
+    ],
+    "2. Crear el script y la escena del Blanco": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966055516
+      }
+    ],
+    "3. Crear el script y la escena del Pistolero": [
+      {
+        "executionId": "2a3af36c-456f-4e7d-877c-85b107febb07",
+        "chatSessionId": "sess_7e0d06a0-61fe-4b82-bb53-9f1f3047b271",
+        "timestamp": 1787966060391
+      }
+    ]
+  }
+}
