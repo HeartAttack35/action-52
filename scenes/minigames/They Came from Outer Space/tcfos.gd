@@ -53,7 +53,7 @@ func _ready() -> void:
 func _on_shoot_requested(shoot_pos: Vector2, dir: Vector2) -> void:
 	var laser: Area2D = LASER_SCENE.instantiate()
 	laser.position  = shoot_pos
-	laser.direction = dir
+	laser.setup(dir)       # configura dirección, hitbox y aspecto visual
 	add_child(laser)
 
 
