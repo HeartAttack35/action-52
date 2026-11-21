@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cs14r5irx51k0"]
 
 [ext_resource type="Script" uid="uid://cog55f46p6wbw" path="res://scenes/minigames/Dedant/player.gd" id="1_player"]
-[ext_resource type="Texture2D" uid="uid://kam5inc5j1ow" path="res://assets/sprites/Gemini_Generated_Image_nvs3hanvs3hanvs3.jpeg" id="2_w3x7r"]
+[ext_resource type="Texture2D" uid="uid://cl2aawqpwvfqp" path="res://assets/sprites/Gemini_Generated_Image_nvs3hanvs3hanvs3.png" id="2_w3x7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(120, 184)
