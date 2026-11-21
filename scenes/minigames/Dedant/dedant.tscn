@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dedant_main_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Dedant/dedant.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/minigames/Dedant/player.tscn" id="2_player"]
+
+[node name="Dedant" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+
+[node name="AntSpawner" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="WaveTicker" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="LabelScore" type="Label" parent="HUD"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 200.0
+offset_bottom = 40.0
+text = "Puntos: 0"
+
+[node name="LabelLives" type="Label" parent="HUD"]
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 80.0
+text = "Vidas: 3"
+
+[node name="LabelWave" type="Label" parent="HUD"]
+offset_left = 10.0
+offset_top = 90.0
+offset_right = 200.0
+offset_bottom = 120.0
+text = "Oleada: 1"
+
+[connection signal="timeout" from="AntSpawner" to="." method="_on_ant_spawner_timeout"]
+[connection signal="timeout" from="WaveTicker" to="." method="_on_wave_ticker_timeout"]

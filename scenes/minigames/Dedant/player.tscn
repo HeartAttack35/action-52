@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cs14r5irx51k0"]
+
+[ext_resource type="Script" uid="uid://cog55f46p6wbw" path="res://scenes/minigames/Dedant/player.gd" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://kam5inc5j1ow" path="res://assets/sprites/Gemini_Generated_Image_nvs3hanvs3hanvs3.jpeg" id="2_w3x7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(120, 184)
+
+[node name="Player" type="CharacterBody2D" unique_id=663873616 groups=["jugador"]]
+script = ExtResource("1_player")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1626172744]
+position = Vector2(4.000025, -9.536743e-07)
+scale = Vector2(0.15988372, 0.16666666)
+texture = ExtResource("2_w3x7r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1777618782]
+position = Vector2(4, 12)
+shape = SubResource("RectangleShape2D_player")
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=1965933438]
+position = Vector2(0, -30)

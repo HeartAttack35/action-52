@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjcnfwui8jhwt"]
+
+[ext_resource type="Script" uid="uid://d3v6hrha8e071" path="res://scenes/minigames/Dedant/ant.gd" id="1_ant"]
+[ext_resource type="Texture2D" uid="uid://dlaixcc8yui0m" path="res://assets/sprites/Gemini_Generated_Image_ulvc8sulvc8sulvc.jpeg" id="2_80fua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ant"]
+size = Vector2(73, 96)
+
+[node name="Ant" type="Area2D" unique_id=2082863090 groups=["enemigos"]]
+script = ExtResource("1_ant")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=348375017]
+position = Vector2(12.000004, -3.9999943)
+scale = Vector2(0.08430232, 0.088541664)
+texture = ExtResource("2_80fua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1316589653]
+position = Vector2(11.5, 0)
+shape = SubResource("RectangleShape2D_ant")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -26,6 +26,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Shooting Gallery/shooting_gallery.tscn",
 		"tier": 1,
 	},
+	{
+		"id": "dedant",
+		"name": "Dedant",
+		"scene": "res://scenes/minigames/Dedant/dedant.tscn",
+		"tier": 1,
+	},
 ]
 
 

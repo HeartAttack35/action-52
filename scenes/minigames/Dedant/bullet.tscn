@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dedant_bullet_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Dedant/bullet.gd" id="1_bullet"]
+[ext_resource type="Texture2D" uid="uid://dub1sono6dujc" path="res://assets/sprites/pngkey.com-lazer-beam-png-8162960.png" id="2_sprite"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bullet"]
+size = Vector2(4, 16)
+
+[node name="Bullet" type="Area2D" groups=["proyectiles"]]
+script = ExtResource("1_bullet")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_sprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bullet")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
