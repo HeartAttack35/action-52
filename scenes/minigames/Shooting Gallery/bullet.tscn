@@ -1,16 +1,26 @@
 [gd_scene format=3 uid="uid://bx7p3nkdqt8vy"]
 
-[ext_resource type="Script" uid="uid://dm4r9cfwjh2xs" path="res://scenes/minigames/Shooting Gallery/bullet.gd" id="1_k5r2n"]
+[ext_resource type="Script" uid="uid://dm4sacfwjh2xs" path="res://scenes/minigames/Shooting Gallery/bullet.gd" id="1_k5r2n"]
+[ext_resource type="Texture2D" uid="uid://dub1sono6dujc" path="res://assets/sprites/pngkey.com-lazer-beam-png-8162960.png" id="2_hjqj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8mzp"]
-size = Vector2(4, 12)
+size = Vector2(133, 51)
 
-[node name="Bullet" type="Area2D" groups=["proyectiles"]]
+[node name="Bullet" type="Area2D" unique_id=1015019114 groups=["proyectiles"]]
 script = ExtResource("1_k5r2n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=832108459]
+position = Vector2(82.5, -2.5)
 shape = SubResource("RectangleShape2D_w8mzp")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1857278743]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1357040925]
+
+[node name="Pngkey_comLazerBeamPng8162960" type="Sprite2D" parent="." unique_id=1730017328]
+position = Vector2(0.5000038, -1.0000017)
+rotation = 3.1406333
+scale = Vector2(0.37547404, 0.23361824)
+texture = ExtResource("2_hjqj7")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

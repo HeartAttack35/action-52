@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b6qh32rlu43v1"]
+
+[ext_resource type="Script" uid="uid://b1cdo1nrxf30r" path="res://scenes/minigames/Shooting Gallery/enemy.gd" id="1_enemy"]
+[ext_resource type="Texture2D" uid="uid://bgcv5jgt1o4ti" path="res://assets/sprites/Custom _ Edited - The Simpsons Customs - Homer Simpson - Homer Simpson (Bart Vs. the Space Mutants-Style).png" id="2_dbswi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemy"]
+size = Vector2(64, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30gat"]
+atlas = ExtResource("2_dbswi")
+region = Rect2(0, 0, 20, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43kdr"]
+atlas = ExtResource("2_dbswi")
+region = Rect2(20, 0, 20, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf3wl"]
+atlas = ExtResource("2_dbswi")
+region = Rect2(40, 0, 20, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blj86"]
+atlas = ExtResource("2_dbswi")
+region = Rect2(60, 0, 20, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igiee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30gat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43kdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf3wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blj86")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Area2D" unique_id=876467693 groups=["enemigos"]]
+script = ExtResource("1_enemy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1268504043]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_enemy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=638541430]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1848046930]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2010572917]
+position = Vector2(-4.7683716e-07, -7.999999)
+scale = Vector2(2.4, 2.0869563)
+sprite_frames = SubResource("SpriteFrames_igiee")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

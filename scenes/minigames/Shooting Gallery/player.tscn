@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b3t0xxxtfvnie" path="res://assets/sprites/images.png" id="2_cpaoj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2jqb"]
-radius = 16.0
-height = 40.0
+radius = 80.0
+height = 192.0
 
 [node name="Player" type="CharacterBody2D" unique_id=854243235]
 script = ExtResource("1_fatqr")
@@ -14,7 +14,9 @@ script = ExtResource("1_fatqr")
 shape = SubResource("CapsuleShape2D_n2jqb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489054269]
+position = Vector2(1.5000038, -1.9073486e-06)
+scale = Vector2(0.3736462, 0.36101082)
 texture = ExtResource("2_cpaoj")
 
 [node name="ShootPoint" type="Marker2D" parent="." unique_id=1965399801]
-position = Vector2(0, -20)
+position = Vector2(20, 0)
