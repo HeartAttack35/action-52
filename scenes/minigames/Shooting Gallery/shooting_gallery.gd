@@ -55,9 +55,10 @@ func _enemy_interval() -> float:
 	return ENEMY_INTERVAL_MAX * pow(ENEMY_INTERVAL_MIN / ENEMY_INTERVAL_MAX, t)
 
 
-func _on_shoot_requested(shoot_pos: Vector2) -> void:
+func _on_shoot_requested(shoot_pos: Vector2, dir: Vector2) -> void:
 	var bullet: Area2D = BULLET_SCENE.instantiate()
 	bullet.position = shoot_pos
+	bullet.setup(dir)
 	add_child(bullet)
 
 

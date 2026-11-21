@@ -2,10 +2,16 @@ extends CharacterBody2D
 ## player.gd  (Shooting Gallery)
 ## Pistolero fijo en el borde izquierdo. Se mueve verticalmente (↑/↓) y emite
 ## una señal cuando dispara para que la escena principal instancie la bala.
+##
+## La señal lleva la dirección activa al momento del disparo:
+##   • Sin dirección (neutro)  → tiro horizontal puro   (→)
+##   • ↑ sostenido             → tiro diagonal-arriba   (→↑ 45°)
+##   • ↓ sostenido             → tiro diagonal-abajo    (→↓ 45°)
 
 const SPEED: float = 300.0
 
-signal shoot_requested(position: Vector2)
+## Incluye la dirección normalizada del disparo.
+signal shoot_requested(position: Vector2, direction: Vector2)
 
 
 func _physics_process(_delta: float) -> void:
@@ -25,4 +31,9 @@ func _process(_delta: float) -> void:
 
 
 func _shoot() -> void:
-	shoot_requested.emit($ShootPoint.global_position)
+	# La dirección del disparo combina: siempre hacia la derecha (+X)
+	# más la componente vertical activa en ese instante.
+	var vert: float = Input.get_axis("ui_up", "ui_down")  # -1, 0 o +1
+	var dir: Vector2 = Vector2(1.0, vert).normalized()
+	shoot_requested.emit($ShootPoint.global_position, dir)
+

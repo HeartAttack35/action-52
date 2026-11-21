@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://tcfos_player_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/They Came from Outer Space/player.gd" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://2hyclk0hipcl" path="res://assets/sprites/NicePng_spaceship-png_138961.png" id="2_sprite"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(50, 40)
+
+[node name="Player" type="CharacterBody2D" groups=["jugador"]]
+script = ExtResource("1_player")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_sprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_player")
+
+[node name="ShootPoint" type="Marker2D" parent="."]
+position = Vector2(0, -30)
+
+[node name="Crosshair" type="Marker2D" parent="."]
+position = Vector2(0, -70)

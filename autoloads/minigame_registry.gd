@@ -38,6 +38,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Spread-Fire/spread_fire.tscn",
 		"tier": 1,
 	},
+	{
+		"id": "tcfos",
+		"name": "They Came from Outer Space",
+		"scene": "res://scenes/minigames/They Came from Outer Space/tcfos.tscn",
+		"tier": 1,
+	},
 ]
 
 
