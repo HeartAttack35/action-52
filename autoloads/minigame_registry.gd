@@ -44,6 +44,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/They Came from Outer Space/tcfos.tscn",
 		"tier": 1,
 	},
+	{
+		"id": "beeps_and_blips",
+		"name": "Beeps and Blips",
+		"scene": "res://scenes/minigames/Beeps and Blips/BeepsAndBlips.tscn",
+		"tier": 1,
+	},
 ]
 
 

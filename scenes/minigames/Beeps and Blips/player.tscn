@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bnb_player_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Beeps and Blips/player.gd" id="1_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(44, 24)
+
+[node name="Player" type="CharacterBody2D" groups=["jugador"]]
+script = ExtResource("1_player")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="BaseBody" type="ColorRect" parent="Visuals"]
+offset_left = -20.0
+offset_top = -7.0
+offset_right = 20.0
+offset_bottom = 7.0
+color = Color(0, 0.9, 1, 1)
+
+[node name="CoreBlock" type="ColorRect" parent="Visuals"]
+offset_left = -10.0
+offset_top = -15.0
+offset_right = 10.0
+offset_bottom = -3.0
+color = Color(1, 0.86, 0, 1)
+
+[node name="CannonBlock" type="ColorRect" parent="Visuals"]
+offset_left = -3.0
+offset_top = -22.0
+offset_right = 3.0
+offset_bottom = -14.0
+color = Color(1, 1, 1, 1)
+
+[node name="LeftWing" type="ColorRect" parent="Visuals"]
+offset_left = -26.0
+offset_top = -3.0
+offset_right = -20.0
+offset_bottom = 7.0
+color = Color(1, 0, 0.5, 1)
+
+[node name="RightWing" type="ColorRect" parent="Visuals"]
+offset_left = 20.0
+offset_top = -3.0
+offset_right = 26.0
+offset_bottom = 7.0
+color = Color(1, 0, 0.5, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_player")
+
+[node name="ShootPoint" type="Marker2D" parent="."]
+position = Vector2(0, -24)

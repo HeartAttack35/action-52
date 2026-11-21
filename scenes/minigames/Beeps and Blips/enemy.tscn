@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bnb_enemy_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Beeps and Blips/enemy.gd" id="1_enemy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemy"]
+size = Vector2(26, 26)
+
+[node name="Enemy" type="Area2D" groups=["enemigos"]]
+script = ExtResource("1_enemy")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="CoreBlock" type="ColorRect" parent="Visuals"]
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+color = Color(1, 0.08, 0.42, 1)
+
+[node name="InnerBlock" type="ColorRect" parent="Visuals"]
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+color = Color(0, 1, 1, 1)
+
+[node name="BlipTop" type="ColorRect" parent="Visuals"]
+offset_left = -3.0
+offset_top = -15.0
+offset_right = 3.0
+offset_bottom = -9.0
+color = Color(1, 0.9, 0, 1)
+
+[node name="BlipBottom" type="ColorRect" parent="Visuals"]
+offset_left = -3.0
+offset_top = 9.0
+offset_right = 3.0
+offset_bottom = 15.0
+color = Color(1, 0.9, 0, 1)
+
+[node name="BlipLeft" type="ColorRect" parent="Visuals"]
+offset_left = -15.0
+offset_top = -3.0
+offset_right = -9.0
+offset_bottom = 3.0
+color = Color(1, 0.9, 0, 1)
+
+[node name="BlipRight" type="ColorRect" parent="Visuals"]
+offset_left = 9.0
+offset_top = -3.0
+offset_right = 15.0
+offset_bottom = 3.0
+color = Color(1, 0.9, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_enemy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
