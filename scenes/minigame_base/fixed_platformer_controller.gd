@@ -18,6 +18,7 @@ signal shoot_requested(position: Vector2)
 
 # ── Node references ───────────────────────────────────────────────────────────
 @onready var _sprite:       AnimatedSprite2D = $AnimatedSprite2D
+@onready var _attack_area:  Area2D           = $AttackArea
 @onready var _attack_shape: CollisionShape2D = $AttackArea/AttackAreaShape
 @onready var _origin:       Marker2D         = $AttackOrigin
 
