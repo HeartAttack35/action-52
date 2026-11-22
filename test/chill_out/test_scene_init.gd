@@ -1,0 +1,31 @@
+extends GdUnitTestSuite
+# Feature: chill-out — Main scene initialization and HUD tests
+
+const CHILL_OUT_SCENE = preload("res://scenes/minigames/Chill-Out/ChillOut.tscn")
+
+
+func test_scene_initialization_and_nodes() -> void:
+	var game = CHILL_OUT_SCENE.instantiate()
+	add_child(game)
+	await get_tree().process_frame
+
+	assert_bool(game is MinigameBase).is_true()
+	assert_object(game.get_node("TileMap")).is_not_null()
+	assert_object(game.get_node("Platforms")).is_not_null()
+	assert_object(game.get_node("Platforms/Floor")).is_not_null()
+	assert_object(game.get_node("Player")).is_not_null()
+	assert_object(game.get_node("Enemies")).is_not_null()
+
+	var enemies_node = game.get_node("Enemies")
+	assert_int(enemies_node.get_child_count()).is_greater_equal(3)
+	assert_int(game.remaining_enemies).is_equal(enemies_node.get_child_count())
+
+	var label_score: Label = game.get_node("HUD/LabelScore")
+	var label_lives: Label = game.get_node("HUD/LabelLives")
+	var label_enemies: Label = game.get_node("HUD/LabelEnemies")
+
+	assert_str(label_score.text).is_equal("Puntos: %d" % GameManager.score)
+	assert_str(label_lives.text).is_equal("Vidas: %d" % GameManager.lives)
+	assert_str(label_enemies.text).is_equal("Rivales: %d" % game.remaining_enemies)
+
+	game.queue_free()

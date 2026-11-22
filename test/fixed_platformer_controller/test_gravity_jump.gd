@@ -40,19 +40,19 @@ func _make_floor(y_pos: float) -> StaticBody2D:
 	return floor_body
 
 
-# Simulate a single "just pressed" input event for ui_accept.
+# Simulate a single "just pressed" input event for ui_up.
 func _press_jump() -> void:
 	var ev := InputEventAction.new()
-	ev.action = "ui_accept"
+	ev.action = "ui_up"
 	ev.pressed = true
 	ev.strength = 1.0
 	Input.parse_input_event(ev)
 
 
-# Release ui_accept so the next frame doesn't see it as still pressed.
+# Release ui_up so the next frame doesn't see it as still pressed.
 func _release_jump() -> void:
 	var ev := InputEventAction.new()
-	ev.action = "ui_accept"
+	ev.action = "ui_up"
 	ev.pressed = false
 	ev.strength = 0.0
 	Input.parse_input_event(ev)

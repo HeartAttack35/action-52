@@ -1,0 +1,206 @@
+[gd_scene load_steps=15 format=3 uid="uid://chill_out_main_001"]
+
+[ext_resource type="PackedScene" path="res://scenes/minigame_base/Minigame.tscn" id="1_base"]
+[ext_resource type="Script" path="res://scenes/minigames/Chill-Out/chill_out.gd" id="2_script"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Chill-Out/sprites/ice_platform.png" id="3_tile_tex"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Chill-Out/sprites/chill_out_bg.png" id="4_bg"]
+[ext_resource type="PackedScene" path="res://scenes/minigames/Chill-Out/player.tscn" id="5_player"]
+[ext_resource type="PackedScene" path="res://scenes/minigames/Chill-Out/enemy.tscn" id="6_enemy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ice"]
+texture = ExtResource("3_tile_tex")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_arctic"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetAtlasSource_ice")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(850, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_l1"]
+size = Vector2(192, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_l2"]
+size = Vector2(160, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_l3_c"]
+size = Vector2(224, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_l3_p"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(20, 700)
+
+[node name="ChillOut" instance=ExtResource("1_base")]
+script = ExtResource("2_script")
+
+[node name="Background" type="TextureRect" parent="." index="0"]
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("4_bg")
+expand_mode = 1
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+tile_set = SubResource("TileSet_arctic")
+format = 2
+
+[node name="Platforms" type="Node2D" parent="." index="2"]
+
+[node name="Floor" type="StaticBody2D" parent="Platforms"]
+position = Vector2(400, 568)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/Floor"]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="PlatformL1_Left" type="StaticBody2D" parent="Platforms"]
+position = Vector2(160, 456)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformL1_Left"]
+shape = SubResource("RectangleShape2D_plat_l1")
+
+[node name="PlatformL1_Right" type="StaticBody2D" parent="Platforms"]
+position = Vector2(640, 456)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformL1_Right"]
+shape = SubResource("RectangleShape2D_plat_l1")
+
+[node name="PlatformL2_Left" type="StaticBody2D" parent="Platforms"]
+position = Vector2(304, 328)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformL2_Left"]
+shape = SubResource("RectangleShape2D_plat_l2")
+
+[node name="PlatformL2_Right" type="StaticBody2D" parent="Platforms"]
+position = Vector2(496, 328)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformL2_Right"]
+shape = SubResource("RectangleShape2D_plat_l2")
+
+[node name="PlatformL3_Center" type="StaticBody2D" parent="Platforms"]
+position = Vector2(400, 200)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformL3_Center"]
+shape = SubResource("RectangleShape2D_plat_l3_c")
+
+[node name="PlatformL3_Left" type="StaticBody2D" parent="Platforms"]
+position = Vector2(96, 200)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformL3_Left"]
+shape = SubResource("RectangleShape2D_plat_l3_p")
+
+[node name="PlatformL3_Right" type="StaticBody2D" parent="Platforms"]
+position = Vector2(704, 200)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/PlatformL3_Right"]
+shape = SubResource("RectangleShape2D_plat_l3_p")
+
+[node name="LeftWall" type="StaticBody2D" parent="Platforms"]
+position = Vector2(-10, 300)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/LeftWall"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="RightWall" type="StaticBody2D" parent="Platforms"]
+position = Vector2(810, 300)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/RightWall"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Player" parent="." index="3" instance=ExtResource("5_player")]
+position = Vector2(400, 500)
+
+[node name="Enemies" type="Node2D" parent="." index="4"]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource("6_enemy")]
+position = Vector2(160, 420)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("6_enemy")]
+position = Vector2(640, 420)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("6_enemy")]
+position = Vector2(300, 290)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("6_enemy")]
+position = Vector2(490, 290)
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource("6_enemy")]
+position = Vector2(380, 160)
+
+[node name="HUD" type="CanvasLayer" parent="." index="5"]
+
+[node name="LabelScore" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 200.0
+offset_bottom = 36.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Puntos: 0"
+
+[node name="LabelLives" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 36.0
+offset_right = 200.0
+offset_bottom = 60.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Vidas: 3"
+
+[node name="LabelEnemies" type="Label" parent="HUD"]
+offset_left = 16.0
+offset_top = 60.0
+offset_right = 200.0
+offset_bottom = 84.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+text = "Rivales: 5"
+
+[node name="LabelMessage" type="Label" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -30.0
+offset_right = 250.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.9, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.9)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+horizontal_alignment = 1
+vertical_alignment = 1

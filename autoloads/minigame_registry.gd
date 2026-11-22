@@ -50,6 +50,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Beeps and Blips/BeepsAndBlips.tscn",
 		"tier": 1,
 	},
+	{
+		"id": "chill_out",
+		"name": "Chill-Out",
+		"scene": "res://scenes/minigames/Chill-Out/ChillOut.tscn",
+		"tier": 2,
+	},
 ]
 
 

@@ -17,18 +17,20 @@ signal shoot_requested(position: Vector2)
 @export var melee_duration: float = 0.2
 
 # ── Node references ───────────────────────────────────────────────────────────
-@onready var _sprite:       AnimatedSprite2D = $AnimatedSprite2D
-@onready var _attack_area:  Area2D           = $AttackArea
-@onready var _attack_shape: CollisionShape2D = $AttackArea/AttackAreaShape
-@onready var _origin:       Marker2D         = $AttackOrigin
+@onready var _sprite:       CanvasItem       = get_node_or_null("AnimatedSprite2D") if has_node("AnimatedSprite2D") else (get_node_or_null("Sprite2D") if has_node("Sprite2D") else null)
+@onready var _attack_area:  Area2D           = get_node_or_null("AttackArea")
+@onready var _attack_shape: CollisionShape2D = get_node_or_null("AttackArea/AttackAreaShape")
+@onready var _origin:       Marker2D         = get_node_or_null("AttackOrigin")
 
 # ── Private state ─────────────────────────────────────────────────────────────
 var _gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var _attack_timer: float = 0.0   # counts down when melee hitbox is active
+var facing_direction: float = 1.0
 
 # ── Lifecycle ─────────────────────────────────────────────────────────────────
 func _ready() -> void:
-	_attack_shape.disabled = true
+	if _attack_shape:
+		_attack_shape.disabled = true
 
 func _physics_process(delta: float) -> void:
 	_apply_gravity(delta)
@@ -44,8 +46,10 @@ func _apply_gravity(delta: float) -> void:
 		velocity.y += _gravity * delta
 
 func _handle_jump() -> void:
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = jump_velocity
+	elif Input.is_action_just_released("ui_up") and velocity.y < 0.0:
+		velocity.y *= 0.5
 
 func _handle_movement() -> void:
 	var direction: float = Input.get_axis("ui_left", "ui_right")
@@ -56,31 +60,45 @@ func _handle_movement() -> void:
 func _apply_direction(direction: float) -> void:
 	velocity.x = direction * speed
 	if direction > 0.0:
-		_sprite.flip_h = false
-		_origin.position.x = abs(_origin.position.x)
+		facing_direction = 1.0
+		if _sprite and "flip_h" in _sprite:
+			_sprite.flip_h = false
+		if _origin:
+			_origin.position.x = abs(_origin.position.x)
 	elif direction < 0.0:
-		_sprite.flip_h = true
-		_origin.position.x = -abs(_origin.position.x)
+		facing_direction = -1.0
+		if _sprite and "flip_h" in _sprite:
+			_sprite.flip_h = true
+		if _origin:
+			_origin.position.x = -abs(_origin.position.x)
 
 func _clamp_to_viewport() -> void:
-	global_position.x = clamp(
-		global_position.x, 0.0, get_viewport_rect().size.x
-	)
+	var vp_size := get_viewport_rect().size
+	if vp_size.x > 0.0:
+		global_position.x = clamp(
+			global_position.x, 0.0, vp_size.x
+		)
 
 func _handle_attack() -> void:
-	if not Input.is_action_just_pressed("ui_select"):
+	if not (Input.is_action_just_pressed("ui_select") or Input.is_action_just_pressed("ui_accept")):
 		return
 	if use_melee:
 		_start_melee()
 	if use_projectile:
-		shoot_requested.emit(_origin.global_position)
+		var shoot_pos: Vector2 = _origin.global_position if _origin else global_position
+		shoot_requested.emit(shoot_pos)
 
 func _start_melee() -> void:
-	_attack_shape.disabled = false
+	if _attack_shape:
+		_attack_shape.disabled = false
 	_attack_timer = melee_duration
 
 func _tick_melee_timer(delta: float) -> void:
 	if _attack_timer > 0.0:
 		_attack_timer -= delta
 		if _attack_timer <= 0.0:
-			_attack_shape.disabled = true
+			if _attack_shape:
+				_attack_shape.disabled = true
+
+func get_facing_direction() -> float:
+	return facing_direction

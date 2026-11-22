@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c_plat_player_base_001"]
+
+[ext_resource type="Script" path="res://scenes/minigame_base/fixed_platformer_controller.gd" id="1_script"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_body"]
+radius = 16.0
+height = 48.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_attack"]
+size = Vector2(32, 32)
+
+[node name="PlatformerPlayerBase" type="CharacterBody2D" groups=["jugador", "player"]]
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_body")
+
+[node name="AttackOrigin" type="Marker2D" parent="."]
+position = Vector2(24, 0)
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="AttackAreaShape" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_attack")
+disabled = true

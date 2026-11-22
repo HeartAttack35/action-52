@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://chill_out_enemy_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Chill-Out/enemy.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Chill-Out/sprites/esquimal_enemy.png" id="2_texture"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_enemy"]
+radius = 15.0
+height = 42.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
+size = Vector2(34, 42)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemigo", "enemy"]]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_enemy")
+
+[node name="LedgeRayCast" type="RayCast2D" parent="."]
+position = Vector2(20, 20)
+target_position = Vector2(0, 26)
+
+[node name="WallRayCast" type="RayCast2D" parent="."]
+target_position = Vector2(26, 0)
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="ShootPoint" type="Marker2D" parent="."]
+position = Vector2(26, 4)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_hitbox")
