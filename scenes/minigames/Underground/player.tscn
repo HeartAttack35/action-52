@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://underground_player_001"]
+
+[ext_resource type="PackedScene" path="res://scenes/minigame_base/PlatformerPlayerBase.tscn" id="1_base"]
+[ext_resource type="Script" path="res://scenes/minigames/Underground/underground_player.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://scenes/minigames/Underground/pickaxe.tscn" id="3_pickaxe"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Underground/sprites/miner_player.png" id="4_texture"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_miner"]
+radius = 14.0
+height = 40.0
+
+[node name="Player" instance=ExtResource("1_base")]
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("2_script")
+speed = 150.0
+jump_velocity = -440.0
+attack_scene = ExtResource("3_pickaxe")
+use_melee = false
+use_projectile = true
+climb_speed = 140.0
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_texture")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_miner")
+
+[node name="AttackOrigin" parent="." index="2"]
+position = Vector2(24, 0)

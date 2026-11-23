@@ -68,6 +68,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Cry Baby/CryBaby.tscn",
 		"tier": 2,
 	},
+	{
+		"id": "underground",
+		"name": "Underground",
+		"scene": "res://scenes/minigames/Underground/Underground.tscn",
+		"tier": 2,
+	},
 ]
 
 
