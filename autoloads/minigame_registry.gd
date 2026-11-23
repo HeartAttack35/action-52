@@ -56,6 +56,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Chill-Out/ChillOut.tscn",
 		"tier": 2,
 	},
+	{
+		"id": "french_baker",
+		"name": "French Baker",
+		"scene": "res://scenes/minigames/French Baker/FrenchBaker.tscn",
+		"tier": 2,
+	},
 ]
 
 
