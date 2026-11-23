@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cry_baby_enemy_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Cry Baby/enemy.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Cry Baby/sprites/toy_enemy.png" id="2_texture"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_toy"]
+radius = 15.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
+size = Vector2(32, 28)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemigo", "enemy", "toy_enemy"]]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_toy")
+
+[node name="LedgeRayCast" type="RayCast2D" parent="."]
+position = Vector2(18, 12)
+target_position = Vector2(0, 24)
+
+[node name="WallRayCast" type="RayCast2D" parent="."]
+target_position = Vector2(22, 0)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" parent="Hitbox" type="CollisionShape2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hitbox")

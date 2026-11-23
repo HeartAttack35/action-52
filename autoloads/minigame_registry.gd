@@ -62,6 +62,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/French Baker/FrenchBaker.tscn",
 		"tier": 2,
 	},
+	{
+		"id": "cry_baby",
+		"name": "Cry Baby",
+		"scene": "res://scenes/minigames/Cry Baby/CryBaby.tscn",
+		"tier": 2,
+	},
 ]
 
 
