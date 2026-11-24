@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://illuminator_player_001"]
+
+[ext_resource type="PackedScene" path="res://scenes/minigame_base/PlatformerPlayerBase.tscn" id="1_base"]
+[ext_resource type="Script" path="res://scenes/minigames/Illuminator/illuminator_player.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://scenes/minigames/Illuminator/light_beam.tscn" id="3_beam"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Illuminator/sprites/player.png" id="4_texture"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Illuminator/sprites/light_aura.png" id="5_aura"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_illuminator"]
+radius = 13.0
+height = 40.0
+
+[node name="Player" instance=ExtResource("1_base")]
+collision_layer = 16
+collision_mask = 9
+script = ExtResource("2_script")
+speed = 155.0
+jump_velocity = -420.0
+attack_scene = ExtResource("3_beam")
+use_melee = false
+use_projectile = true
+climb_speed = 140.0
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_texture")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_illuminator")
+
+[node name="AttackOrigin" parent="." index="2"]
+position = Vector2(26, 0)
+
+[node name="FlashlightGlow" type="PointLight2D" parent="." index="4"]
+position = Vector2(12, 0)
+color = Color(1, 0.94, 0.76, 1)
+energy = 0.7
+texture = ExtResource("5_aura")
+texture_scale = 2.0

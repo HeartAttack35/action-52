@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://illuminator_shadow_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Illuminator/shadow_enemy.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Illuminator/sprites/shadow_enemy.png" id="2_texture"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shadow"]
+radius = 13.0
+height = 36.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hitbox"]
+size = Vector2(30, 36)
+
+[node name="ShadowEnemy" type="CharacterBody2D" groups=["enemigo", "enemy", "shadow"]]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_shadow")
+
+[node name="LedgeRayCast" type="RayCast2D" parent="."]
+position = Vector2(18, 16)
+target_position = Vector2(0, 24)
+collision_mask = 9
+
+[node name="WallRayCast" type="RayCast2D" parent="."]
+target_position = Vector2(24, 0)
+collision_mask = 9
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_hitbox")
