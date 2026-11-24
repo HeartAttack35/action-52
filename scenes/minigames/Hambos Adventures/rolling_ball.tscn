@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://rolling_ball_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Hambos Adventures/rolling_ball.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Hambos Adventures/sprites/rolling_ball.png" id="2_tex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hitbox"]
+radius = 14.0
+
+[node name="RollingBall" type="CharacterBody2D" groups=["enemy", "hazard", "obstaculo", "rolling_ball"]]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_body")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_hitbox")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-16, -16, 32, 32)

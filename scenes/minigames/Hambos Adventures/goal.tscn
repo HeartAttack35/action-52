@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://hambos_goal_001"]
+
+[ext_resource type="Script" path="res://scenes/minigames/Hambos Adventures/goal.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Hambos Adventures/sprites/trophy.png" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goal"]
+size = Vector2(32, 32)
+
+[node name="Goal" type="Area2D" groups=["goal", "meta"]]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_goal")

@@ -74,6 +74,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Underground/Underground.tscn",
 		"tier": 2,
 	},
+	{
+		"id": "hambos_adventures",
+		"name": "Hambo's Adventures",
+		"scene": "res://scenes/minigames/Hambos Adventures/HambosAdventures.tscn",
+		"tier": 2,
+	},
 ]
 
 
