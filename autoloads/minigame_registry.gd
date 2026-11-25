@@ -92,6 +92,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Lollipop/Lollipop.tscn",
 		"tier": 2,
 	},
+	{
+		"id": "the_evil_empire",
+		"name": "The Evil Empire",
+		"scene": "res://scenes/minigames/The Evil Empire/TheEvilEmpire.tscn",
+		"tier": 2,
+	},
 ]
 
 
