@@ -127,6 +127,24 @@ func test_flip_h_toggles_on_direction_reversal() -> void:
 	ctrl.queue_free()
 
 
+func test_attack_shape_flips_with_direction() -> void:
+	## AttackAreaShape.position.x must mirror to match facing direction
+	var ctrl := _make_controller()
+	ctrl.get_node("AttackArea/AttackAreaShape").position = Vector2(24.0, 0.0)
+	add_child(ctrl)
+	await get_tree().process_frame
+
+	ctrl._apply_direction(-1.0)
+	assert_float(ctrl._attack_shape.position.x).is_equal(-24.0)
+
+	ctrl._apply_direction(1.0)
+	assert_float(ctrl._attack_shape.position.x).is_equal(24.0)
+
+	ctrl._apply_direction(0.0)
+	assert_float(ctrl._attack_shape.position.x).is_equal(24.0)
+	ctrl.queue_free()
+
+
 func test_flip_h_property_randomised() -> void:
 	## Property 2 (randomised sweep): for 100 random non-zero directions,
 	## flip_h is false iff direction > 0

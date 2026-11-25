@@ -59,18 +59,18 @@ func _handle_movement() -> void:
 ## directly without simulating Input.  Requirement 3.1-3.4.
 func _apply_direction(direction: float) -> void:
 	velocity.x = direction * speed
-	if direction > 0.0:
-		facing_direction = 1.0
-		if _sprite and "flip_h" in _sprite:
-			_sprite.flip_h = false
-		if _origin:
-			_origin.position.x = abs(_origin.position.x)
-	elif direction < 0.0:
-		facing_direction = -1.0
-		if _sprite and "flip_h" in _sprite:
-			_sprite.flip_h = true
-		if _origin:
-			_origin.position.x = -abs(_origin.position.x)
+	if direction == 0.0:
+		return
+	var dir_sign: float = 1.0 if direction > 0.0 else -1.0
+	facing_direction = dir_sign
+	if _sprite and "flip_h" in _sprite:
+		_sprite.flip_h = (dir_sign < 0.0)
+	if _origin:
+		_origin.position.x = abs(_origin.position.x) * dir_sign
+	if _attack_shape:
+		_attack_shape.position.x = abs(_attack_shape.position.x) * dir_sign
+	if _attack_area and _attack_area.position.x != 0.0:
+		_attack_area.position.x = abs(_attack_area.position.x) * dir_sign
 
 func _clamp_to_viewport() -> void:
 	var vp_size := get_viewport_rect().size

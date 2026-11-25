@@ -86,6 +86,12 @@ var minigames: Array[Dictionary] = [
 		"scene": "res://scenes/minigames/Illuminator/Illuminator.tscn",
 		"tier": 2,
 	},
+	{
+		"id": "lollipop",
+		"name": "Lollipop",
+		"scene": "res://scenes/minigames/Lollipop/Lollipop.tscn",
+		"tier": 2,
+	},
 ]
 
 

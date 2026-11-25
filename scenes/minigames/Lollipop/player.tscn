@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://lollipop_player_001"]
+
+[ext_resource type="PackedScene" path="res://scenes/minigame_base/PlatformerPlayerBase.tscn" id="1_base"]
+[ext_resource type="Script" path="res://scenes/minigames/Lollipop/lollipop_player.gd" id="2_script"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Lollipop/sprites/lollipop_hero.png" id="3_hero_tex"]
+[ext_resource type="Texture2D" path="res://scenes/minigames/Lollipop/sprites/lollipop_swing.png" id="4_swing_tex"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lollipop_player"]
+radius = 15.0
+height = 42.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lollipop_melee"]
+size = Vector2(40, 36)
+
+[node name="Player" instance=ExtResource("1_base")]
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("2_script")
+speed = 180.0
+jump_velocity = -540.0
+attack_scene = null
+use_melee = true
+use_projectile = false
+melee_duration = 0.18
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("3_hero_tex")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_lollipop_player")
+
+[node name="AttackOrigin" parent="." index="2"]
+position = Vector2(28, 0)
+
+[node name="AttackArea" parent="." index="3" groups=["lollipop_attack", "player_melee"]]
+collision_layer = 4
+collision_mask = 2
+
+[node name="AttackAreaShape" parent="AttackArea"]
+position = Vector2(28, 0)
+shape = SubResource("RectangleShape2D_lollipop_melee")
+disabled = true
+
+[node name="LollipopSwingSprite" type="Sprite2D" parent="AttackArea"]
+visible = false
+position = Vector2(28, 0)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_swing_tex")
